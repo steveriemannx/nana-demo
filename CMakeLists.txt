@@ -44,7 +44,8 @@ endfunction(set_nana_test)
 
 
 set (demos_dir ${CMAKE_CURRENT_LIST_DIR})
-set (demos    calculator file_explorer helloworld_demo notepad   widget_show  widget_show2   )
+set (demos    calculator chatgpt_demo helloworld_demo notepad   widget_show  widget_show2   )
+# set (demos    calculator file_explorer helloworld_demo notepad   widget_show  widget_show2   )
 # Pending:
 
 

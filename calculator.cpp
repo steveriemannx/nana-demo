@@ -188,7 +188,7 @@ int main()
 	//Make the label right aligned.
 	procedure.text_align(nana::align::right);
 	result.text_align(nana::align::right);
-	result.typeface(nana::paint::font("", 14, true));
+	// No custom colors — use native macOS appearance
 
 	place["procedure"] << procedure;
 	place["result"] << result;
@@ -199,13 +199,12 @@ int main()
 	std::map<char,button*> bts;
 
 	char keys[] = "Cm%/789X456-123+0.="; // \261
-	paint::font keyfont("", 10, true);
 
 	for (auto key : keys)
 	{
 		std::string Key;
 		if (key == 'm')
-			Key = plus_minus;  
+			Key = plus_minus;
     	else
 			Key = std::string(1, key);
 
@@ -214,13 +213,8 @@ int main()
 		bts[key]=&key_btn;
 
 		key_btn.caption(Key);
-		key_btn.typeface(keyfont);
+		// No custom colors or fonts — use native macOS button appearance
 
-		if ('=' == key)
-		{
-			key_btn.bgcolor(color_rgb(0x7ACC));
-			key_btn.fgcolor(color_rgb(0xFFFFFF));
-		}
 		place["opkeys"] << key_btn;
 
 		//Make event answer for keys.
